@@ -28,7 +28,7 @@ function oneProduct(data) {
       description.setAttribute('class', 'description');
       prix.setAttribute("class", "price");
       btn.setAttribute("class", "button");
-      a.setAttribute("href", `index.html/produit.html?id=${data._id}`);
+      a.setAttribute("href", `#`);
       label.setAttribute('for', 'couleurs');
       label.setAttribute('class', 'choix');
       select.setAttribute('id', 'couleurs')
@@ -50,7 +50,7 @@ function oneProduct(data) {
       
       //Contenu texte
       nom.textContent = data.name;
-      prix.textContent = `${data.price / 100},00€`;
+      prix.textContent = (data.price / 100).toFixed(2) + ' €';
       description.textContent = data.description;
       label.textContent = "Sélectionner une couleur :";  
       
@@ -63,7 +63,13 @@ function oneProduct(data) {
           option.innerHTML = `${data.colors[i]}`;
           
         }
-        
+        let cart = document.getElementsByClassName('button');
+
+for (let i=0; i < cart.length; i++) {
+  cart[i].addEventListener('click', () => {
+    console.log("Ajouter au panier");
+  })
+}
       
       
       
@@ -71,10 +77,13 @@ function oneProduct(data) {
       btn.innerHTML = "Ajouter au panier";
     }
 
-async function descriptiveProduct() {
-  await fetch('http://localhost:3000/api/teddies/' + product) // will return info, but in wrong format
-    .then((response) => response.json()) // will return info, in json format
-    .then((data) => oneProduct(data)) // main code here, using json info
-}
-
 descriptiveProduct()
+
+//---------------Sélection de l'élt qui va recevoir la commande-----------------
+let cart = document.getElementsByClassName('button');
+
+for (let i=0; i < cart.length; i++) {
+  cart[i].addEventListener('click', () => {
+    console.log(localStorage);
+  })
+}
