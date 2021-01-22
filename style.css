@@ -9,10 +9,10 @@ section {
     display: flex;
     justify-content: space-between;
     font-family: cursive;
-    background-color: #f2cec6;
+    background-color: #fae4df;
 }
 nav {
-    width : 300px;
+    width : 400px;
     margin-right: 100px;
     align-self: flex-end;
 }
@@ -20,16 +20,22 @@ nav {
     list-style-type: none;
     text-decoration: none;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: space-around;
     font-size: 20px;
     padding-left: 50px;
 }
-
+input {
+padding-top: 8px;
+border: hidden;
+}
 .menu a {
     text-decoration: none;
     cursor: pointer;
-    color: #000000;
+    color: #3e3f40;
+    background-color : #ffffff;
+    padding-left : 20px;
+    padding-right: 20px;
 }
 .menu img {
     object-fit: cover;
@@ -75,6 +81,7 @@ nav {
     justify-content: center;
     align-items: center;
     margin: 30px;
+    border: 6px ridge #bb7b6e;
 }
 .produit {
     background-color: #b8a09b;
@@ -84,7 +91,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1;
-     margin: 30px;
+    margin: 30px;
 }
 .name {
     grid-column: 1;
@@ -148,13 +155,13 @@ option {
 }
 .priceA, .price {
     color: #ffffff;
-    margin-left: 50px;
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 46px;
 }
 .priceA {
-    text-align: right;
+    align-self: flex-end;
+    margin-right: 50px;
 }
 .price {
     grid-column: 3;
@@ -171,24 +178,24 @@ option {
     position: absolute;
     grid-column: 3;
     grid-row: 1;
-    left: 50px;
+    left: 52px;
     bottom: 76px;
     text-decoration: none;
 
 }
-a .buttn {
+a .button {
     justify-self: left;
-
+    text-decoration: none;
 }
 .button {
     display: flex;
     justify-content: left;
-    background-color:  #f2cec6;
+    background-color:  #fae4df;
     border: 2px #ffffff solid;
+    font-size: 15px;
     color: #3e3f40;
-    font-size: 20px;
     padding: 10px;
     font-weight: bold;
     cursor: pointer;
-
+    
 }
