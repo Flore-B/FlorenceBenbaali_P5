@@ -7,39 +7,51 @@
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
     <script
-    src="https://kit.fontawesome.com/297539409b.js"
-    crossorigin="anonymous"
-  ></script>
+      src="https://kit.fontawesome.com/297539409b.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/front/style.css" />
     <title>Projet 5 - OpenClassRooms</title>
   </head>
 
   <body>
-      <header class="menu">
+    <header class="menu">
       <p>
-        <img src="/front/orinoco_logo2.jpg"  alt="Image du logo">
+        <img src="/front/orinoco_logo2.jpg" alt="Image du logo" />
       </p>
-    <nav>
-      <ul>
-        <li><input type="search" placeholder="Rechercher" ></li>
-        <li><a href="/front/panier.html"><i class="fas fa-shopping-basket"></i>&nbspPanier <span>(0)</span></a></li>
-      </ul>
-    </nav>
-
-      </header>
-      <section>
-        <div class="title">
+      <nav>
+        <ul>
+          <li><input type="search" placeholder="Rechercher" /></li>
+          <li>
+            <a href="/front/panier.html" id="basket"
+              ><i class="fas fa-shopping-basket"></i>&nbspPanier
+              <span>0</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <div class="title">
         <h1>Bienvenue chez Orinoco !</h1>
-          <p class="descriptif">Des peluches entièrement cousues à la main par les meilleurs ateliers français</p>
-        
-        <div class="container" id="teddies">
-          
+        <p class="descriptif">
+          Des peluches entièrement cousues à la main par les meilleurs ateliers
+          français
+        </p>
 
-        </div>
+        <div class="container" id="teddies"></div>
       </div>
-</section>
-<script src="/front/js/ajax.js"></script>
-<script src="/front/js/index.js"></script>
-   
+    </section>
+    <footer>
+      <ul>
+        <li><a href="#">A propos</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">CGV</a></li>
+        <li><a href="#">Livraisons et retours</a></li>
+        <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </footer>
+    <script src="/front/js/ajax.js"></script>
+    <script src="/front/js/index.js"></script>
   </body>
 </html>
