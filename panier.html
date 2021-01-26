@@ -7,33 +7,56 @@
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
     <script
-    src="https://kit.fontawesome.com/297539409b.js"
-    crossorigin="anonymous"
-  ></script>
+      src="https://kit.fontawesome.com/297539409b.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Projet 5 - OpenClassRooms</title>
   </head>
   <body>
     <header class="menu">
       <p>
-        <img src="/front/orinoco_logo2.jpg"  alt="Image du logo">
+        <img src="/front/orinoco_logo2.jpg" alt="Image du logo" />
       </p>
       <nav>
         <ul>
           <li><a href="/front/index.html">Accueil</a></li>
-          <li><a href="/front/panier.html"><i class="fas fa-shopping-basket"></i>&nbspPanier <span>(0)</span></a></li>
+          <li>
+            <a href="/front/panier.html" id="basket"
+              ><i class="fas fa-shopping-basket"></i>&nbspPanier
+              <span id="basket-count">0</span></a
+            >
+          </li>
         </ul>
       </nav>
     </header>
     <section>
-      <div class="title">
-        <h1>Bienvenue chez Orinoco</h1>
-            
+      <div class="basket-title">
+        <h1>Panier</h1>
+      
 
 
-        
-</section>
-<script src="/front/js/ajax.js"></script>
-<script src="/front/js/panier.js"></script>
-</body>
+      <div class="basket-container">
+        <h3 class="produit">Produit</h3>
+        <h3 class="couleur">Couleur</h3>
+        <h3 class="prix">Prix</h3>
+        <h3 class="quantite">Quantité</h3>
+        <h3 class="total">Total</h3>
+      </div>
+    </div>
+    </section>
+
+    <footer>
+      <ul>
+        <li><a href="#">AS propos</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Conditions générales de vente</a></li>
+        <li><a href="#">Livraisons et retours</a></li>
+        <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </footer>
+
+    <script src="/front/js/ajax.js"></script>
+    <script src="/front/js/panier.js"></script>
+  </body>
 </html>

@@ -4,9 +4,11 @@ html, body {
 }
 section {
     display: flex;
+    justify-content: center;
 }
 .menu {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     font-family: cursive;
     background-color: #fae4df;
@@ -16,18 +18,20 @@ nav {
     margin-right: 100px;
     align-self: flex-end;
 }
-.menu ul {
+ul {
     list-style-type: none;
     text-decoration: none;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+.menu ul{
     font-size: 20px;
     padding-left: 50px;
 }
 input {
-padding-top: 8px;
-border: hidden;
+    padding-top: 8px;
+    border: hidden;
 }
 .menu a {
     text-decoration: none;
@@ -83,7 +87,7 @@ border: hidden;
     margin: 30px;
     border: 6px ridge #bb7b6e;
 }
-.produit {
+.product {
     background-color: #b8a09b;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -102,10 +106,9 @@ border: hidden;
     font-size: 50px;
     font-family: cursive;
 }
-.teddy img, .produit img {
+.teddy img, .product img {
     grid-column: 2;
     grid-row: 1;
-    
     align-self: center;
     object-fit: cover;
     margin-bottom: 30px;
@@ -117,7 +120,7 @@ border: hidden;
     width: 400px;
     height: 300px;
 }
-.produit img {
+.product img {
     width: 450px;
     height: 350px;
 }
@@ -183,11 +186,11 @@ option {
     text-decoration: none;
 
 }
-a .button {
+a .cart {
     justify-self: left;
     text-decoration: none;
 }
-.button {
+.cart, button {
     display: flex;
     justify-content: left;
     background-color:  #fae4df;
@@ -198,4 +201,63 @@ a .button {
     font-weight: bold;
     cursor: pointer;
     
+}
+/*-----------------Page panier-------------------------*/
+.basket-title {
+    text-align: center;
+    font-family: cursive;
+    
+    font-size: 30px; 
+    color: #b47163;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+.basket-container {
+    width: 1300px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size : 20px;
+}
+.produit,
+.couleur,
+.quantite,
+.prix,
+.total {
+    display:flex;
+    justify-content: center;}
+.produit,
+.total {
+    width: 20%;
+}
+.couleur,
+.prix {
+    width: 15%;
+}
+.quantite {
+    width: 10%;
+}
+
+
+
+
+
+
+
+/*--------------------footer---------------------------*/
+footer {
+    border-top: 5px solid #fae4df;
+    height: 100px;
+    font-size: 20px;
+}
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 20px;    
+}
+footer a {
+    text-decoration: none;
+    color: #3e3f40;
 }
