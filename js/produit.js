@@ -1,89 +1,58 @@
-//------------Récupérer l'id dans l'URL---------------------------
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const product = urlParams.get('id');
-
-
-function oneProduct(data) {
- 
-  //Création balises 
-      const content = document.getElementById('product');
-      
-      
-      const produit = document.createElement ("div");
-      const nom = document.createElement("h2");
-      const img = document.createElement("img");
-      const description = document.createElement("p");
-      const label = document.createElement ('label');
-      const select = document.createElement('select');
-      const prix = document.createElement("p");
-      const btn = document.createElement("button");
-      const a = document.createElement("a");
-      
-      //Création classes
-      produit.setAttribute("class", "produit");
-      nom.setAttribute("class", "name");
-      img.setAttribute('src', data.imageUrl);
-      img.setAttribute('alt', 'photo ours en peluche');
-      description.setAttribute('class', 'description');
-      prix.setAttribute("class", "price");
-      btn.setAttribute("class", "button");
-      a.setAttribute("href", `#`);
-      label.setAttribute('for', 'couleurs');
-      label.setAttribute('class', 'choix');
-      select.setAttribute('id', 'couleurs')
-     
-
-      
-      
-     
-      content.appendChild(produit);
-      produit.appendChild(nom);
-      produit.appendChild(img);
-      produit.appendChild(description);
-      produit.appendChild(prix);
-      produit.appendChild(label);
-      produit.appendChild(select);
-      
-      a.appendChild(btn);
-      produit.appendChild(a);
-      
-      //Contenu texte
-      nom.textContent = data.name;
-      prix.textContent = (data.price / 100).toFixed(2) + ' €';
-      description.textContent = data.description;
-      label.textContent = "Sélectionner une couleur :";  
-      
-      
-        for(i=0; i< data.colors.length; i++) {
-
-          const option = document.createElement('option');
-          select.appendChild(option);
-          option.setAttribute('value', 'data.colors[i]');
-          option.innerHTML = `${data.colors[i]}`;
-          
-        }
-        let cart = document.getElementsByClassName('button');
-
-for (let i=0; i < cart.length; i++) {
-  cart[i].addEventListener('click', () => {
-    console.log("Ajouter au panier");
-  })
-}
-      
-      
-      
-      img.setAttribute('src', data.imageUrl);
-      btn.innerHTML = "Ajouter au panier";
-    }
-
+//-------------------Fonction qui appelle la requête fetch----------------------------
 descriptiveProduct()
 
-//---------------Sélection de l'élt qui va recevoir la commande-----------------
-let cart = document.getElementsByClassName('button');
+//-------------------Fonction pour créer la carte du produit en HTML------------------
+function oneProduct(data) {
 
-for (let i=0; i < cart.length; i++) {
-  cart[i].addEventListener('click', () => {
-    console.log(localStorage);
-  })
+    let content = document.getElementById('product');//conteneur de la carte du nounours
+
+//-------------------Création de la div pour le nom-----------------------------------
+    let nameTeddy = document.createElement('div');
+    nameTeddy.setAttribute('class', 'name');
+    nameTeddy.textContent = data.name;
+    content.appendChild(nameTeddy);
+
+//-------------------Création de la balise img pour la photo--------------------------
+let imgTeddy = document.createElement('img');
+imgTeddy.setAttribute('src', data.imageUrl);
+imgTeddy.setAttribute('alt', 'Photo d\'un ours en peluche');
+content.appendChild(imgTeddy);
+
+//-------------------Création de la balise p pour le prix----------------------------
+let priceTeddy = document.createElement('p');
+priceTeddy.setAttribute('class', 'prix');
+priceTeddy.innerHTML = `${(data.price / 100).toFixed(2)} €`;
+content.appendChild(priceTeddy);
+
+//-------------------Création de la balise p pour la description--------------------
+let descriptionTeddy = document.createElement('p');
+descriptionTeddy.setAttribute('class', 'description');
+descriptionTeddy.textContent = data.description;
+content.appendChild(descriptionTeddy);
+
+//-------------- Création du formulaire pour le choix de la couleur------------------
+let labelColorTeddy = document.createElement('label');
+labelColorTeddy.setAttribute('for', 'couleurs');
+labelColorTeddy.setAttribute('class', 'choix');
+labelColorTeddy.textContent = "Sélectionner une couleur :";
+content.appendChild(labelColorTeddy);
+
+let selectColorTeddy = document.createElement('select');
+selectColorTeddy.setAttribute('name', 'couleurs');
+selectColorTeddy.setAttribute('id', 'couleurs');
+content.appendChild(selectColorTeddy);
+
+//------------Boucle for pour le menu déroulant-------------------------------------
+for(i = 0; i < data.colors.length; i++) {
+    let optionColorTeddy = document.createElement('option');
+    optionColorTeddy.setAttribute('value', data.colors[i]);
+    selectColorTeddy.appendChild(optionColorTeddy);
+    optionColorTeddy.innerHTML = data.colors[i];
 }
+
+//--------------Récupération de la couleur sélectionnée-----------------------------
+optionColorTeddy = document.getElementById('couleurs').value;
+    console.log(optionColorTeddy)
+}
+
+

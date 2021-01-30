@@ -5,6 +5,7 @@ html, body {
 section {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .menu {
     display: flex;
@@ -29,7 +30,7 @@ ul {
     font-size: 20px;
     padding-left: 50px;
 }
-input {
+.menu input {
     padding-top: 8px;
     border: hidden;
 }
@@ -87,7 +88,7 @@ input {
     margin: 30px;
     border: 6px ridge #bb7b6e;
 }
-.product {
+#product {
     background-color: #b8a09b;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -106,7 +107,7 @@ input {
     font-size: 50px;
     font-family: cursive;
 }
-.teddy img, .product img {
+.teddy img, #product img {
     grid-column: 2;
     grid-row: 1;
     align-self: center;
@@ -120,7 +121,7 @@ input {
     width: 400px;
     height: 300px;
 }
-.product img {
+#product img {
     width: 450px;
     height: 350px;
 }
@@ -156,7 +157,7 @@ option {
     margin-top : 70px;
     color: #ffffff;
 }
-.priceA, .price {
+.priceA, .prix {
     color: #ffffff;
     font-weight: bold;
     font-size: 20px;
@@ -166,7 +167,7 @@ option {
     align-self: flex-end;
     margin-right: 50px;
 }
-.price {
+.prix {
     grid-column: 3;
     grid-row: 1;
     align-self: flex-start;
@@ -206,40 +207,63 @@ a .cart {
 .basket-title {
     text-align: center;
     font-family: cursive;
-    
     font-size: 30px; 
     color: #b47163;
     padding-top: 40px;
     padding-bottom: 40px;
     margin-bottom: 40px;
 }
-.basket-container {
+#basket-container {
     width: 1300px;
+    background-color: #b47163;
+    color: #ffffff;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
     font-size : 20px;
 }
-.produit,
-.couleur,
-.quantite,
-.prix,
-.total {
+#produit,
+#couleur,
+#quantite,
+#prix,
+#supprimer,
+#total {
     display:flex;
-    justify-content: center;}
-.produit,
-.total {
+    justify-content: center;
+}
+#produit,
+#total {
     width: 20%;
 }
-.couleur,
-.prix {
+#couleur,
+#prix,
+#quantite,
+#supprimer {
     width: 15%;
 }
-.quantite {
-    width: 10%;
+/*--------------------formulaire------------------------*/
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-
+.formulaire h2 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 30px; 
+    color: #b47163;
+    padding-top: 40px;
+}
+.formulaire p {
+    text-align: center;
+    font-family: cursive;
+    font-size: 20px; 
+    color: #3e3f40;
+}
+.formulaire input {
+    width: 250px;
+    height: 30px;
+}
 
 
 
