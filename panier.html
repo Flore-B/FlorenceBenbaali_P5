@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <title>Projet 5 - OpenClassRooms</title>
+    <title>Récapitulatif de la commande</title>
   </head>
   <body>
     <header class="menu">
@@ -36,21 +36,35 @@
       
 
 
-      <div class="basket-container">
-        <h3 class="produit">Produit</h3>
-        <h3 class="couleur">Couleur</h3>
-        <h3 class="prix">Prix</h3>
-        <h3 class="quantite">Quantité</h3>
-        <h3 class="total">Total</h3>
+      <div id="basket-container">
+        <h3 id="produit">Produit</h3>
+        <h3 id="couleur">Couleur</h3>
+        <h3 id="prix">Prix</h3>
+        <h3 id="quantite">Quantité</h3>
+        <h3 id="supprimer">Supprimer</h3>
+        <h3 id="total">Total</h3>
       </div>
+    </div>
+
+    <div class="formulaire">
+    <h2>Formulaire de contact</h2>
+    <p>Merci de bien vouloir renseigner tous les champs du formulaire pour valider votre commande</p>
+    <form method="post" id="formulaire">
+      <p><label for="prénom">Prénom </label><input type="text" name="first-name" id="prénom" /></p>
+      <p><label for="nom">Nom </label><input type="text" name="last-name" id="nom" /></p>
+      <p><label for="email">Courriel </label><input type="email" name="email" id="email" /></p>
+      <p><label for="adress">Adresse </label><textarea name="adress" id="adress" rows="3" cols="40"></textarea></p>
+      <p><label for="ville">Ville </label><input type="text required" name="ville" id="ville" /></p>
+      <p><input class="submit" type="submit" value="Envoyer"></p>
+    </form>
     </div>
     </section>
 
     <footer>
       <ul>
-        <li><a href="#">AS propos</a></li>
+        <li><a href="#">A propos</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#">Conditions générales de vente</a></li>
+        <li><a href="#">CGV</a></li>
         <li><a href="#">Livraisons et retours</a></li>
         <li><a href="#">Mentions légales</a></li>
       </ul>
