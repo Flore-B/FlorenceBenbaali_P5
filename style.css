@@ -75,10 +75,10 @@ ul {
     grid-column: 2;
     grid-row: 1;
 }
-.teddy {
+.bear {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #b8a09b;
+    background-color: #8f6c61;
     position: relative;
     display : flex;
     flex-direction: column;
@@ -86,10 +86,10 @@ ul {
     justify-content: center;
     align-items: center;
     margin: 30px;
-    border: 6px ridge #bb7b6e;
+    border: 6px ridge #f8c0b3;
 }
 #product {
-    background-color: #b8a09b;
+    background-color: #8f6c61;
     padding-top: 40px;
     padding-bottom: 40px;
     position: relative;
@@ -107,7 +107,7 @@ ul {
     font-size: 50px;
     font-family: cursive;
 }
-.teddy img, #product img {
+.bear img, #product img {
     grid-column: 2;
     grid-row: 1;
     align-self: center;
@@ -117,7 +117,7 @@ ul {
     margin-left: 50px;
     box-shadow: 4px 4px 6px #69524d;
 }
-.teddy img {
+.bear img {
     width: 400px;
     height: 300px;
 }
@@ -178,7 +178,7 @@ option {
     margin: 0;
 }
 
-.teddy a {
+.bear a {
     position: absolute;
     grid-column: 3;
     grid-row: 1;
@@ -187,35 +187,44 @@ option {
     text-decoration: none;
 
 }
-a .cart {
+a .btnAdd {
     justify-self: left;
     text-decoration: none;
 }
-.cart, button {
+.btnAdd, .click {
     display: flex;
     justify-content: left;
-    background-color:  #fae4df;
-    border: 2px #ffffff solid;
     font-size: 15px;
+    background-color:  #fae4df;
     color: #3e3f40;
     padding: 10px;
+
+}
+.valid, .submit {
+    justify-content: center;
+    font-size: 35px;
+    background-color:  #8f6c61;
+    color: #ffffff;
+    padding: 10px 44px;
+}
+.btnAdd, .click, .valid , .submit {
+    border: 2px #ffffff solid;
     font-weight: bold;
     cursor: pointer;
-    
 }
+
 /*-----------------Page panier-------------------------*/
 .basket-title {
     text-align: center;
     font-family: cursive;
     font-size: 30px; 
-    color: #b47163;
+    color: #8f6c61;
     padding-top: 40px;
     padding-bottom: 40px;
     margin-bottom: 40px;
 }
 #basket-container {
-    width: 1300px;
-    background-color: #b47163;
+    background-color: #8f6c61;
     color: #ffffff;
     display:flex;
     flex-direction: row;
@@ -246,12 +255,13 @@ a .cart {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 .formulaire h2 {
     text-align: center;
     font-family: cursive;
     font-size: 30px; 
-    color: #b47163;
+    color: #8f6c61;
     padding-top: 40px;
 }
 .formulaire p {
@@ -260,10 +270,15 @@ a .cart {
     font-size: 20px; 
     color: #3e3f40;
 }
-.formulaire input {
-    width: 250px;
-    height: 30px;
+.formulaire input, .formulaire textarea {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    min-height: 30px;
+    margin-right: 37%;
+    margin-left: 37%;
 }
+
 
 
 
