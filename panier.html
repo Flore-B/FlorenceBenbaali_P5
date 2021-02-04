@@ -23,41 +23,89 @@
           <li><a href="/front/index.html">Accueil</a></li>
           <li>
             <a href="/front/panier.html" id="basket"
-              ><i class="fas fa-shopping-basket"></i>&nbspPanier
+              ><i class="fas fa-shopping-basket"></i>&nbsp;Panier
               <span id="basket-count">0</span></a
             >
           </li>
         </ul>
       </nav>
     </header>
-    <section>
+    <section id='panier'>
       <div class="basket-title">
         <h1>Panier</h1>
-      
 
-
-      <div id="basket-container">
-        <h3 id="produit">Produit</h3>
-        <h3 id="couleur">Couleur</h3>
-        <h3 id="prix">Prix</h3>
-        <h3 id="quantite">Quantité</h3>
-        <h3 id="supprimer">Supprimer</h3>
-        <h3 id="total">Total</h3>
+        <div id="basket-container">
+          <div>
+            <h2>Produit</h2>
+          <ul id="produit">
+          </ul>
+         </div>
+         <div>
+           <h2>Couleur</h2>
+          <ul id="couleur">
+          </ul>
+          </div>
+          <div>
+          <h2>Prix</h2>
+          <ul id="prix">
+          </ul>
+          </div>
+          <div>
+            <h2>Quantité</h2>
+          <ul id="quantite">
+          </ul>
+        </div>
+        <div>
+          <h2>Supprimer</h2>
+          <ul id="supprimer">
+          </ul>
+        </div>
+        <div>
+          <h2>Total</h2>
+          <ul id="total">
+          </ul>
+        </div>
+        </div>
+        <div class="prix_total">
+        </div>
       </div>
-    </div>
-
-    <div class="formulaire">
-    <h2>Formulaire de contact</h2>
-    <p>Merci de bien vouloir renseigner tous les champs du formulaire pour valider votre commande</p>
-    <form method="post" id="formulaire">
-      <p><label for="prénom">Prénom </label><input type="text" name="first-name" id="prénom" /></p>
-      <p><label for="nom">Nom </label><input type="text" name="last-name" id="nom" /></p>
-      <p><label for="email">Courriel </label><input type="email" name="email" id="email" /></p>
-      <p><label for="adress">Adresse </label><textarea name="adress" id="adress" rows="3" cols="40"></textarea></p>
-      <p><label for="ville">Ville </label><input type="text required" name="ville" id="ville" /></p>
-      <p><input class="submit" type="submit" value="Envoyer"></p>
-    </form>
-    </div>
+    </section>
+<section id ="form">
+      <div class="formulaire">
+        <h2>Formulaire de contact</h2>
+        <p>
+          Merci de bien vouloir renseigner tous les champs du formulaire pour
+          valider votre commande
+        </p>
+        <form method="post" id="formulaire">
+          <p>
+            <label for="prénom">Prénom </label
+            ><input type="text" name="first-name" id="prénom" />
+            <small></small>
+          </p>
+          <p>
+            <label for="nom">Nom </label
+            ><input type="text" name="last-name" id="nom" />
+            <small></small>
+          </p>
+          <p>
+            <label for="email">Courriel </label
+            ><input type="email" name="email" id="email" />
+            <small></small>
+          </p>
+          <p>
+            <label for="adress">Adresse </label
+            ><textarea name="adress" id="adress" rows="3" cols="40"></textarea>
+            <small></small>
+          </p>
+          <p>
+            <label for="ville">Ville </label
+            ><input type="text" name="ville" id="ville" />
+            <small></small>
+          </p>
+          <p><input class="submit" type="submit" value="Envoyer" /></p>
+        </form>
+      </div>
     </section>
 
     <footer>
