@@ -187,20 +187,19 @@ option {
     text-decoration: none;
 
 }
-a .btnAdd {
-    justify-self: left;
-    text-decoration: none;
-}
+
 .btnAdd, .click {
     display: flex;
     justify-content: left;
+    justify-self: left;
+    text-decoration: none;
     font-size: 15px;
     background-color:  #fae4df;
     color: #3e3f40;
     padding: 10px;
 
 }
-.valid, .submit {
+.valid, .submit, .prix_total {
     justify-content: center;
     font-size: 35px;
     background-color:  #8f6c61;
@@ -224,12 +223,23 @@ a .btnAdd {
     margin-bottom: 40px;
 }
 #basket-container {
-    background-color: #8f6c61;
-    color: #ffffff;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    font-size : 20px;
+    border: 2px solid #8f6c61;
+    color: #3e3f40;
+    font-size : 26px;
+}
+#basket-container h2 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 24px; 
+    color: #8f6c61;
+}
+#produit img  {
+    width: 150px;
+    height: 110px;
+    align-self: center;
 }
 #produit,
 #couleur,
@@ -238,9 +248,29 @@ a .btnAdd {
 #supprimer,
 #total {
     display:flex;
-    justify-content: center;
+    flex-direction: column;
 }
-#produit,
+#produit li,
+#couleur li,
+#quantite li,
+#prix li,
+#supprimer li,
+#total li {
+    background-color: #ffffff;
+    color: grey;
+    font-size : 18px;
+    align-items: center;
+    list-style-type: none;
+}
+#couleur li,
+#quantite li,
+#prix li,
+#supprimer li,
+#total li {
+    line-height: 150px;
+    width: 90px;
+}
+#produit, 
 #total {
     width: 20%;
 }
@@ -250,12 +280,14 @@ a .btnAdd {
 #supprimer {
     width: 15%;
 }
+#supprimer {
+    cursor: pointer;
+}
 /*--------------------formulaire------------------------*/
 .formulaire {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
 .formulaire h2 {
     text-align: center;
