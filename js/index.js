@@ -31,9 +31,26 @@ function allProducts(data) {
     btn.innerHTML = `Voir ${data[i].name}`;
     a.href = `produit.html?id=${data[i]._id}`;
   }
-  
-
 }
+
+//-----------------Fonction pour afficher la quantité du panier dans le header----------------------
+function countHeader() {
+  let totalBasket = JSON.parse(localStorage.getItem('panier'));
+console.log(totalBasket)
+  count = document.querySelector('span');
+  result = 0;
+if(totalBasket) {
+  for(let elem of totalBasket) {
+    result += elem.quantity;
+  }
+  count.innerHTML = result;
+  console.log(totalBasket)
+} else {
+  count.innerHTML = result;
+}
+}
+countHeader()
+
 //---------------------------Appel de l'API------------------------------
 
 fillProducts();

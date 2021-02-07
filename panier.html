@@ -74,36 +74,36 @@
       <div class="formulaire">
         <h2>Formulaire de contact</h2>
         <p>
-          Merci de bien vouloir renseigner tous les champs du formulaire pour
+          Merci de bien vouloir renseigner tous les champs du formulaire afin de
           valider votre commande
         </p>
         <form method="post" id="formulaire">
           <p>
             <label for="prénom">Prénom </label
-            ><input type="text" name="first-name" id="prénom" />
-            <small></small>
+            ><input type="text" name="first_name" id="prenom" required="required" />
+            <span id="first_name_error"></span>
           </p>
           <p>
             <label for="nom">Nom </label
-            ><input type="text" name="last-name" id="nom" />
-            <small></small>
+            ><input type="text" name="last_name" id="nom" required="required"/>
+            <span id="last_name_error"></span>
+          </p>
+          <p>
+            <label for="adresse">Adresse </label
+            ><textarea name="address" id="adresse" rows="3" cols="40"></textarea required="required">
+              <span id="address_error"></span>
+            </p>
+          <p>
+            <label for="ville">Ville </label
+            ><input type="text" name="town" id="ville" required="required"/>
+            <span id="town_error"></span>
           </p>
           <p>
             <label for="email">Courriel </label
-            ><input type="email" name="email" id="email" />
-            <small></small>
+            ><input type="email" name="email" id="email" required="required"/>
+            <span id="email_error"></span>
           </p>
-          <p>
-            <label for="adress">Adresse </label
-            ><textarea name="adress" id="adress" rows="3" cols="40"></textarea>
-            <small></small>
-          </p>
-          <p>
-            <label for="ville">Ville </label
-            ><input type="text" name="ville" id="ville" />
-            <small></small>
-          </p>
-          <p><input class="submit" type="submit" value="Envoyer" /></p>
+          <p><button class="submit" type="submit" value="Envoyer">Envoyer</button></p>
         </form>
       </div>
     </section>
