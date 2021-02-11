@@ -88,7 +88,6 @@ descriptiveProduct();
       quantity: quantity,
       total: total
    };
-  //  console.log(Object.keys(productSelected))
     // On regarde si le produit + couleur existe dans le panier
     const found = basket.find(
       (productSelected) =>
@@ -117,20 +116,5 @@ function saveBasket(basket) {
     localStorage.setItem("panier", JSON.stringify(basket));
  }
 }
-//-----------------Fonction pour afficher la quantité du panier dans le header----------------------
-function countHeader() {
-  let totalBasket = JSON.parse(localStorage.getItem('panier'));
-console.log(totalBasket)
-  count = document.querySelector('span');
-  result = 0;
-if(totalBasket) {
-  for(let elem of totalBasket) {
-    result += elem.quantity;
-  }
-  count.innerHTML = result;
-  console.log(totalBasket)
-} else {
-  count.innerHTML = result;
-}
-}
+
 countHeader()
