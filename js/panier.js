@@ -69,7 +69,6 @@ function totalPrice() {
     totalPrice += elem.total;
   }
   document.querySelector(".prix_total").textContent = `Le montant de votre panier est de ${(totalPrice / 100).toFixed(2)} € `;
-console.log(totalPrice)
 }
 //-----------------------Fonction pour supprimer un article du panier--------------------------------
 function deletePrice(i) {
@@ -87,28 +86,22 @@ countHeader();
 totalPrice();
 displayBasket();
 
-//----------------------Formulaire-----------------------------------------------------------------------
+
 let form = document.getElementById("formulaire");
+//----------------Vérification de la saisie pour tous les champs du formulaire---------------------------
+form.addEventListener("keydown", () => {
 
 //---------------------------Regex-----------------------------------------------------------------------
-let rEText = new RegExp(/^[A-ZÀ-Ü][a-zà-ÿ]+(-[A-ZÀ-Ü][a-zà-ÿ]+[!0-9])?$/);
-let rEAddress = new RegExp(/[0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s,-]{1,50}$/);
-let rEEmail = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9-.]{2,4}$/);
+let rEText = /^[A-ZÀ-Ü]{1}[a-zà-ÿ]+['-]*[A-ZÀ-Üa-zà-ÿ]*$/;
+let rEAddress = /[0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s,-]{1,50}$/;
+let rEEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9-.]{2,4}$/;
 
-//---------------------------Regex-----------------------------------------------------------------------
-
-let prenom = document.getElementById("prenom");
-let nom = document.getElementById("nom");
-let adresse = document.getElementById("adresse");
-let ville = document.getElementById("ville");
-let couriel = document.getElementById("email");
-
-//----------------Variables pour tester la concordance de l'input----------------------------------------
-let testPrenom = rEText.test(prenom.value);
-let testNom = rEText.test(nom.value);
-let testAdresse = rEAddress.test(adresse.value);
-let testVille = rEText.test(ville.value);
-let testEmail = rEEmail.test(couriel.value);
+//---------------------------Récupération des inputs-----------------------------------------------------
+let prenom = document.getElementById("prenom").value;
+let nom = document.getElementById("nom").value;
+let adresse = document.getElementById("adresse").value;
+let ville = document.getElementById("ville").value;
+let couriel = document.getElementById("email").value;
 
 //----------------Variables pour commenter en cas d'erreur----------------------------------------------
 let prenomError = document.getElementById("first_name_error");
@@ -117,63 +110,62 @@ let adresseError = document.getElementById("address_error");
 let villeError = document.getElementById("town_error");
 let courielError = document.getElementById("email_error");
 
-//----------------Vérification de la saisie pour tous les champs du formulaire---------------------------
-form.addEventListener("input", () => {
-  if (testPrenom == false && prenom.value > 0) {
-    prenomError.textContent = "Saisie incorrecte";
-    prenomError.style.color = "red";
-  } else {
+  if (prenom.match(rEText)) {
     prenomError.textContent = "";
-    console.log(prenom.value)
-  }
-  if (testNom == false && nom.value > 0) {
-    nomError.innerHTML = "Saisie incorrecte";
-    nomError.style.color = "red";
   } else {
+    prenomError.textContent = "Veuillez saisir votre Prénom";
+    prenomError.style.color = "red";
+    return false;
+  }
+  if (nom.match(rEText)) {
     nomError.textContent = "";
-    console.log(nom.value)
-  }
-  if (testAdresse == false && adresse.value > 0) {
-    adresseError.innerHTML = "Saisie incorrecte";
-    adresseError.style.color = "red";
   } else {
+    nomError.textContent = "Veuillez saisir votre Nom";
+    nomError.style.color = "red";
+    return false;
+  }
+  if (adresse.match(rEAddress)) {
     adresseError.textContent = "";
-    console.log(adresse.value)
-  }
-  if (testVille == false && ville.value > 0) {
-    villeError.innerHTML = "Saisie incorrecte";
-    villeError.style.color = "red";
   } else {
+    adresseError.textContent = "Veuillez saisir votre Adresse";
+    adresseError.style.color = "red";
+    return false;
+  }
+  if (ville.match(rEText)) {
     villeError.textContent = "";
-  }
-  if (testEmail == false && couriel.value > 0) {
-    courielError.innerHTML = "Veuillez saisir une adresse email valide";
-    courielError.style.color = "red";
   } else {
+    villeError.textContent = "Veuillez saisir le Nom de votre ville";
+    villeError.style.color = "red";
+    return false;
+  }
+  if (couriel.match(rEEmail)) {
     courielError.textContent = "";
+  } else {
+    courielError.textContent = "Veuillez saisir une adresse email valide";
+    courielError.style.color = "red";
+    return false;
   }
 });
 
 let button = document.querySelector(".submit");
-button.addEventListener("click", (validOrder));
+button.addEventListener("click", (e) => {
 
-
-async function validOrder() {
+  e.preventDefault;
+  
   let products = totalBasket.map((totalBasket) => totalBasket.id);
-  console.log(products);
 
   let order = {
     contact: {
-      firstName: prenom.value,
-      lastName: nom.value,
-      address: adresse.value,
-      city: ville.value,
-      email: couriel.value,  
+      firstName: prenom,
+      lastName: nom,
+      address: adresse,
+      city: ville,
+      email: couriel,  
     },
     products: products,
   };
-console.log(order)
- await fetch("http://localhost:3000/api/teddies/order",
+      
+   fetch("http://localhost:3000/api/teddies/order",
     {
       method: "POST",
       body: JSON.stringify(order),
@@ -188,4 +180,5 @@ console.log(order)
         localStorage.setItem('orderId', JSON.stringify(response.orderId));
         window.location.href = "/front/confirmation.html";
       })
-    }
+    });
+
