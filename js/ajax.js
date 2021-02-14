@@ -6,11 +6,10 @@ async function fillProducts() {
   }
 
 //------------Récupérer l'id du produit dans l'URL---------------------------
-    const urlParams = new URLSearchParams(window.location.search);//Pour accéder à la chaîne des paramètres de l'url
+    const urlParams = new URLSearchParams(window.location.search);//Pour accéder à la chaîne des paramètres de l'URL
     const card = urlParams.get('id');
 
-
-//---------Fonction avec méthode fetch-----------------------------------------
+//-----------------Fonction avec méthode fetch-----------------------------------------
 async function descriptiveProduct() {
     await fetch('http://localhost:3000/api/teddies/' + card) 
       .then(response => response.json()) //retourne au format Json
@@ -18,12 +17,9 @@ async function descriptiveProduct() {
 
   }
 
-
-
 //-----------------Fonction pour afficher la quantité du panier dans le header----------------------
 function countHeader() {
   let totalBasket = JSON.parse(localStorage.getItem('panier'));
-// console.log(totalBasket)
  let count = document.querySelector('span');
   result = 0;
 if(totalBasket) {
@@ -31,7 +27,6 @@ if(totalBasket) {
     result += elem.quantity;
   }
   count.innerText = result;
-  // console.log(totalBasket)
 } 
 }
 
