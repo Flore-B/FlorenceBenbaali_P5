@@ -32,78 +32,76 @@
     </header>
     <section id='panier'>
       <div class="basket-title">
-        <h1>Contenu de votre panier</h1>
-
+        <h1>Contenu de votre panier</h1></div>
         <div id="basket-container">
-          <div>
+          <div class="tab">
             <h2>Produit</h2>
           <ul id="produit">
           </ul>
          </div>
-         <div>
+         <div class="tab">
            <h2>Couleur</h2>
           <ul id="couleur">
           </ul>
           </div>
-          <div>
+          <div class="tab">
           <h2>Prix</h2>
           <ul id="prix">
           </ul>
           </div>
-          <div>
-            <h2>Quantité</h2>
+          <div class="tab">
+            <h2 class="shrink"><span>Quantité</span></h2>
           <ul id="quantite">
           </ul>
         </div>
-        <div>
-          <h2>Supprimer</h2>
+        <div class="tab">
+          <h2 class="delete"><span>Supprimer</span></h2>
           <ul id="supprimer">
           </ul>
         </div>
-        <div>
+        <div class="tab">
           <h2>Total</h2>
           <ul id="total">
           </ul>
         </div>
         </div>
         <div class="prix_total">
-        </div>
+        
       </div>
     </section>
 <section id ="form">
       <div class="formulaire">
         <h2>Formulaire de contact</h2>
         <p>
-          Merci de bien vouloir renseigner tous les champs du formulaire afin de
-          valider votre commande
+          Afin de valider votre commande, nous vous remercions de bien vouloir renseigner tous les champs du formulaire
         </p>
         <form method="post" id="formulaire">
           <p>
             <label for="prenom">Prénom </label
-            ><input type="text" name="first_name" id="prenom" required="required" />
-            <span id="first_name_error"></span>
+            ><input type="text" name="first_name" id="prenom" required />
+            <span id="first_name_error" class="error"></span>
           </p>
           <p>
             <label for="nom">Nom </label
-            ><input type="text" name="last_name" id="nom" required="required"/>
-            <span id="last_name_error"></span>
+            ><input type="text" name="last_name" id="nom" value="" required/>
+            <span id="last_name_error" class="error"></span>
           </p>
           <p>
             <label for="adresse">Adresse </label
-            ><textarea name="address" id="adresse" rows="3" cols="40" required="required"></textarea>
-              <span id="address_error"></span>
+            ><textarea name="address" id="adresse" rows="3" cols="40" value="" required></textarea>
+              <span id="address_error" class="error"></span>
             </p>
           <p>
             <label for="ville">Ville </label
-            ><input type="text" name="town" id="ville" required="required"/>
-            <span id="town_error"></span>
+            ><input type="text" name="town" id="ville" value="" required/>
+            <span id="town_error" class="error"></span>
           </p>
           <p>
             <label for="email">Courriel </label
-            ><input type="email" name="email" id="email" required="required"/>
-            <span id="email_error"></span>
+            ><input type="email" name="email" id="email" value="" required/>
+            <span id="email_error" class="error-email"></span>
           </p>
-          <p><button class="submit" type="submit" value="Envoyer">Envoyer</button></p>
+          <p><input class="submit" type="submit" value="Envoyer"></button></p>
         </form>
       </div>
     </section>

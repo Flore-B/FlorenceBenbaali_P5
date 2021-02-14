@@ -15,6 +15,8 @@ descriptiveProduct();
   const imgTeddy = document.createElement("img");
   imgTeddy.setAttribute("src", data.imageUrl);
   imgTeddy.setAttribute("alt", "Photo d'un ours en peluche");
+  imgTeddy.setAttribute("width", "450px");
+  imgTeddy.setAttribute("height", "350px");
   content.appendChild(imgTeddy);
 
   //-------------------Création de la balise p pour le prix----------------------------
@@ -59,6 +61,7 @@ descriptiveProduct();
   //------------Choix de la couleur et ajout au panier--------------------------------
   btnAdd.addEventListener("click", () => {
     addToBasket();
+    countHeader()
   });
 
   //----------------------Initialisation du panier pour les objets-------------------
@@ -106,7 +109,6 @@ descriptiveProduct();
     window.alert(
       `${productSelected.name} avec sa couleur ${productSelected.color} est dans votre panier`
     );
-    
    saveBasket(basket);
    }
 
@@ -117,4 +119,4 @@ function saveBasket(basket) {
  }
 }
 
-countHeader()
+

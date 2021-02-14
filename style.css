@@ -8,6 +8,7 @@ section {
     justify-content: center;
     flex-direction: column;
 }
+
 .menu {
     display: flex;
     flex-wrap: nowrap;
@@ -35,6 +36,7 @@ ul {
     padding-top: 8px;
     border: hidden;
 }
+
 .menu a {
     text-decoration: none;
     cursor: pointer;
@@ -127,14 +129,6 @@ ul {
     margin-left: 50px;
     box-shadow: 4px 4px 6px #69524d;
 }
-.bear img {
-    width: 400px;
-    height: 300px;
-}
-#product img {
-    width: 450px;
-    height: 350px;
-}
 select {
     grid-column: 2;
     justify-self: center;
@@ -143,7 +137,6 @@ select {
 }
 option {
     grid-column: 2;
-
 }
 .description {
     grid-column: 3;
@@ -208,6 +201,7 @@ option {
 }
 .valid, .submit, .prix_total {
     justify-content: center;
+    text-align: center;
     font-size: 35px;
     background-color:  #8f6c61;
     color: #ffffff;
@@ -225,6 +219,8 @@ option {
     font-size: 30px; 
     color: #8f6c61;
     padding-top: 40px;
+    width: 90%;
+    margin: auto;
 }
 #basket-container {
     display:flex;
@@ -233,6 +229,7 @@ option {
     border: 2px solid #8f6c61;
     color: #3e3f40;
     font-size : 26px;
+    
 }
 #basket-container h2 {
     text-align: center;
@@ -264,6 +261,7 @@ option {
     color: grey;
     font-size : 18px;
     align-items: center;
+    text-align: center;
     list-style-type: none;
 }
 #couleur li,
@@ -311,8 +309,7 @@ option {
     flex-direction: row;
     width: 400px;
     min-height: 30px;
-    margin-right: 37%;
-    margin-left: 37%;
+    margin: auto;
 }
 /*--------------------Confirmation---------------------------*/
 
@@ -333,4 +330,306 @@ footer ul {
 footer a {
     text-decoration: none;
     color: #3e3f40;
+}
+@media all and (max-width: 733px)
+{
+    .menu img {
+        object-fit: cover;
+        width: 100px;
+    }
+    nav {
+        width : 180px;
+        margin-right: 20px;
+        align-self: flex-end;
+    }
+    .menu ul{
+        font-size: 16px;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+    .menu li {
+        margin-top: 8px;
+    }
+    .title {
+        font-size: 24px; 
+    }
+    .descriptif {
+        font-size: 20px;
+        text-align: center;
+        margin-right: 10px;
+        margin-left: 10px;
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .container {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    #product img,  .bear img {
+        width: 80%;
+        height: auto;
+    }
+    #product img {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .bear img {
+        margin: 0;   
+    }
+    .btnAdd {
+        justify-content: center;
+        width: 250px;
+        font-size: 16px;
+        margin: auto;
+    }
+    .click {
+        font-size: 13px;
+    }
+    .priceA {
+        margin-top: 20px;
+        margin-right: 15px;
+        font-size: 16px;
+    }
+    .bear a {
+        left: 15px;
+        bottom: 36px;
+    }
+    .bear {
+        padding-bottom: 0;
+        margin: 10px;
+    }
+    .confirm {
+        margin: 20px;
+    }
+    .confirm p {
+        font-size: 16px;
+    }
+    footer {
+        font-size: 16px;
+    }
+    footer ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        font-weight: bold;
+    }
+    #basket .fas {
+        display: none;
+    }
+    #product {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .name {
+        padding-bottom: 10px;
+        font-size: 25px;
+    }   
+    .prix {
+        align-self: center;
+        text-align: center;;
+        width: 100px;
+        margin: 0;
+        padding-bottom: 10px;
+    }       
+    select {
+        align-self: center;
+        margin-bottom: 60px;
+    }
+    #form {
+        margin: 10px;
+    }
+    .basket-title {
+        font-size: 20px; 
+        padding-top: 20px;
+    }
+    #basket-container {
+        justify-content: space-around;
+        border: none;
+        margin: 0 20px 30px 10px;
+    }
+    .tab {
+        width: 70px;
+    }
+    #basket-container h2 {
+        text-align: center;
+        font-family: cursive;
+        font-weight: bold;
+        font-size: 12px; 
+        color: #8f6c61;
+    }
+    #produit li  {
+        display: none;
+    }
+    #produit img {
+        width: 60px;
+        height: 40px;
+    }
+   .shrink span {
+        visibility: hidden;
+        position: relative;
+        width: 20px;
+    }
+    .shrink span:after {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left:0;
+        content: "Qté";
+        width: 20px;
+    }
+    .delete span {
+        visibility: hidden;
+        position: relative;
+        width: 20px;
+    }
+    .delete span:after {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left:0;
+        content: "Sup";
+    }
+    #produit, 
+    #total,
+    #couleur,
+    #prix,
+    #quantite,
+    #supprimer {
+        margin: 0;
+        padding: 0;
+    }
+    #quantite li,
+    #produit li,
+    #supprimer li,
+    #prix li,
+    #couleur li,
+    #total li {
+        text-align: center;
+        line-height: 50px;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    #couleur li {
+        width: 70px;
+    }
+    #quantite li,
+    #produit li,
+    #supprimer li,
+    #prix li,
+    #total li {
+        width: 50px;
+    }
+   .prix_total {
+        font-size: 24px;
+        padding: 10px;
+    }
+    .formulaire input, .formulaire textarea {
+        min-height: 30px;
+        width: 290px;
+        margin: auto;
+    }
+    .submit {
+        width: 150px;
+    }
+}
+   
+@media all and (min-width: 734px) and (max-width: 1169px) 
+{
+    nav {
+        width : 340px;
+        margin-right: 20px;
+    }
+    .descriptif {
+        font-size: 24px;
+        text-align: center;
+        margin-right: 20%;
+        margin-left: 20%;
+        margin-bottom: 30px;
+    }
+    #product {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .name {
+        padding-bottom: 10px;
+        font-size: 25px;
+    }   
+    .prix {
+        align-self: center;
+        text-align: center;;
+        width: 100px;
+        margin: 0;
+        padding-bottom: 10px;
+    }       
+    select {
+        align-self: center;
+        margin-bottom: 60px;
+    }
+    .btnAdd {
+        justify-content: center;
+        width: 250px;
+        font-size: 18px;
+        margin: auto;
+    }
+    #basket-container {
+        justify-content: space-between;
+        border: none;
+        margin: 0 20px 30px 10px;
+    }
+    .tab {
+        width: 100px;
+    }
+    #produit img {
+        width: 90px;
+        height: 60px;
+    }
+    #produit, 
+    #total,
+    #couleur,
+    #prix,
+    #quantite,
+    #supprimer {
+        margin: 0;
+        padding: 0;
+    }
+    #quantite li,
+    #produit li,
+    #supprimer li,
+    #total li,
+    #couleur li,
+    #prix li {
+        text-align: center;
+        font-size: 18px;
+    }
+    #couleur li,
+    #quantite li,
+    #prix li,
+    #supprimer li,
+    #total li {
+        line-height: 100px;
+        width: 100px;
+    }
+    #produit li {
+        line-height: 50px;
+        width: 120px;
+    }
+    footer {
+        font-size: 22px;
+    }
+    footer ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 30px;
+        padding: 0;
+        font-weight: bold;
+    }
 }
