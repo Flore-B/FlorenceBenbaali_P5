@@ -1,20 +1,24 @@
 html, body {
     width: 100%;
     height: 100%;
+    font-family: cursive;
 }
-/*-----------------Page index-------------------------*/
-section {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+h2 {
+    text-align: center;
+    color: #8f6c61;
 }
-
+p {
+    font-size: 20px;
+}
+/*--------------------Sections communes-------------------------*/
+/*-------------------------Header-------------------------------*/
 .menu {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
-    font-family: cursive;
     background-color: #fae4df;
+}
+.menu img {
+    width: 200px;
 }
 nav {
     width : 400px;
@@ -23,20 +27,13 @@ nav {
 }
 ul {
     list-style-type: none;
-    text-decoration: none;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 .menu ul{
     font-size: 20px;
-    padding-left: 50px;
 }
-.menu input {
-    padding-top: 8px;
-    border: hidden;
-}
-
 .menu a {
     text-decoration: none;
     cursor: pointer;
@@ -45,28 +42,28 @@ ul {
     padding-left : 20px;
     padding-right: 20px;
 }
-.menu img {
-    object-fit: cover;
-    width: 200px;
+
+/*--------------------footer---------------------------*/
+footer {
+    border-top: 5px solid #fae4df;
+    font-size: 22px;
+    height: 100px;
 }
-.container {
-    display : flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-right: 100px;
-    margin-left: 100px;
+footer ul {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;    
 }
-.content {
-    margin: 100px;
+footer a {
+    text-decoration: none;
+    color: #3e3f40;
 }
+
+/*----Page accueil, page produit et page confirmation---*/
 .title {
     text-align: center;
-    font-family: cursive;
     font-size: 30px; 
     color: #b47163;
-    padding-top: 40px;
-    padding-bottom: 40px;
     margin-bottom: 40px;
 }
 .descriptif {
@@ -74,31 +71,13 @@ ul {
     text-align: center;
     margin-right: 30%;
     margin-left: 30%;
-    grid-column: 2;
-    grid-row: 1;
 }
-.bear, .confirm {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #8f6c61;
+.container {
     display : flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 6px ridge #f8c0b3;
-}
-.bear {
-    position: relative;
     flex-wrap: wrap;
-    margin: 30px;
-}
-.confirm {
-    text-align: center;
-    color: #ffffff;
-    margin: 150px;
-}
-.confirm p {
-    font-size: 20px;
+    justify-content: center;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 #product {
     background-color: #8f6c61;
@@ -107,7 +86,10 @@ ul {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1;
+    margin: 30px;
+}
+.bear {
+    position: relative;
     margin: 30px;
 }
 .name {
@@ -117,47 +99,26 @@ ul {
     align-self: center;
     color: #f7e7e4;
     font-size: 50px;
-    font-family: cursive;
+}
+.bear, .confirm {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #8f6c61;
+    display : flex;
+    flex-direction: column;
+    border: 6px ridge #f8c0b3;
 }
 .bear img, #product img {
     grid-column: 2;
     grid-row: 1;
-    align-self: center;
     object-fit: cover;
-    margin-bottom: 30px;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin: 0 50px 30px 50px;
     box-shadow: 4px 4px 6px #69524d;
 }
-select {
-    grid-column: 2;
-    justify-self: center;
-    width: 250px;
-    font-size: 20px;
-}
-option {
-    grid-column: 2;
-}
-.description {
-    grid-column: 3;
-    grid-row: 1;
-    width: 250px;
+.confirm {
+    text-align: center;
     color: #ffffff;
-    align-self: center;
-    text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-}
-.choix {
-    grid-column: 2;
-    grid-row: 2;
-    color: #ffffff;
-}
-.colors {
-    grid-column: 3;
-    grid-row: 1;
-    margin-top : 70px;
-    color: #ffffff;
+    margin: 150px;
 }
 .priceA, .prix {
     color: #ffffff;
@@ -177,7 +138,6 @@ option {
     border-bottom: 2px solid #ffffff;
     padding-bottom: 40px;
     width: 250px;
-    margin: 0;
 }
 .bear a {
     position: absolute;
@@ -186,18 +146,40 @@ option {
     left: 52px;
     bottom: 76px;
     text-decoration: none;
-
+}
+.description {
+    grid-column: 3;
+    grid-row: 1;
+    width: 250px;
+    color: #ffffff;
+    align-self: center;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.choix {
+    grid-column: 2;
+    grid-row: 2;
+    color: #ffffff;
+}
+select {
+    grid-column: 2;
+    justify-self: center;
+    width: 250px;
+    font-size: 20px;
+}
+.colors {
+    grid-column: 3;
+    grid-row: 1;
+    margin-top : 70px;
+    color: #ffffff;
 }
 .btnAdd, .click {
-    display: flex;
-    justify-content: left;
     justify-self: left;
-    text-decoration: none;
     font-size: 15px;
     background-color:  #fae4df;
     color: #3e3f40;
     padding: 10px;
-
 }
 .valid, .submit, .prix_total {
     justify-content: center;
@@ -215,27 +197,19 @@ option {
 /*-----------------Page panier-------------------------*/
 .basket-title {
     text-align: center;
-    font-family: cursive;
     font-size: 30px; 
     color: #8f6c61;
     padding-top: 40px;
-    width: 90%;
     margin: auto;
 }
 #basket-container {
     display:flex;
-    flex-direction: row;
     justify-content: space-around;
-    border: 2px solid #8f6c61;
     color: #3e3f40;
     font-size : 26px;
-    
 }
 #basket-container h2 {
-    text-align: center;
-    font-family: cursive;
     font-size: 24px; 
-    color: #8f6c61;
 }
 #produit img  {
     width: 150px;
@@ -260,9 +234,7 @@ option {
     background-color: #ffffff;
     color: grey;
     font-size : 18px;
-    align-items: center;
     text-align: center;
-    list-style-type: none;
 }
 #couleur li,
 #quantite li,
@@ -271,16 +243,6 @@ option {
 #total li {
     line-height: 150px;
     width: 100px;
-}
-#produit, 
-#total {
-    width: 20%;
-}
-#couleur,
-#prix,
-#quantite,
-#supprimer {
-    width: 15%;
 }
 #supprimer {
     cursor: pointer;
@@ -292,16 +254,11 @@ option {
     justify-content: center;
 }
 .formulaire h2 {
-    text-align: center;
-    font-family: cursive;
     font-size: 30px; 
-    color: #8f6c61;
     padding-top: 40px;
 }
 .formulaire p {
     text-align: center;
-    font-family: cursive;
-    font-size: 20px; 
     color: #3e3f40;
 }
 .formulaire input, .formulaire textarea {
@@ -311,36 +268,15 @@ option {
     min-height: 30px;
     margin: auto;
 }
-/*--------------------Confirmation---------------------------*/
-
-
-
-/*--------------------footer---------------------------*/
-footer {
-    border-top: 5px solid #fae4df;
-    height: 100px;
-    font-size: 20px;
-}
-footer ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 20px;    
-}
-footer a {
-    text-decoration: none;
-    color: #3e3f40;
-}
+/*--------------------Media-queries-------------------------*/
 @media all and (max-width: 733px)
 {
     .menu img {
-        object-fit: cover;
         width: 100px;
     }
     nav {
         width : 180px;
         margin-right: 20px;
-        align-self: flex-end;
     }
     .menu ul{
         font-size: 16px;
@@ -354,16 +290,16 @@ footer a {
     .menu li {
         margin-top: 8px;
     }
+    #basket .fas {
+        display: none;
+    }
     .title {
         font-size: 24px; 
     }
     .descriptif {
         font-size: 20px;
-        text-align: center;
         margin-right: 10px;
         margin-left: 10px;
-        grid-column: 2;
-        grid-row: 1;
     }
     .container {
         margin-right: 10px;
@@ -410,6 +346,7 @@ footer a {
     }
     footer {
         font-size: 16px;
+        height: 140px;
     }
     footer ul {
         flex-direction: column;
@@ -417,9 +354,6 @@ footer a {
         align-items: center;
         padding: 0;
         font-weight: bold;
-    }
-    #basket .fas {
-        display: none;
     }
     #product {
         margin: 10px;
@@ -441,27 +375,26 @@ footer a {
         align-self: center;
         margin-bottom: 60px;
     }
-    #form {
-        margin: 10px;
+    #panier, #form {
+        margin-right: 10px;
+        margin-left: 10px;
     }
     .basket-title {
         font-size: 20px; 
         padding-top: 20px;
     }
     #basket-container {
-        justify-content: space-around;
+        text-align: center;
         border: none;
-        margin: 0 20px 30px 10px;
+        margin-right: 30px;
     }
     .tab {
-        width: 70px;
+        width: 60px;
     }
     #basket-container h2 {
         text-align: center;
-        font-family: cursive;
         font-weight: bold;
-        font-size: 12px; 
-        color: #8f6c61;
+        font-size: 12px;
     }
     #produit li  {
         display: none;
@@ -493,7 +426,10 @@ footer a {
         position: absolute;
         top: 0;
         left:0;
-        content: "Sup";
+        content: "Sup.";
+    }
+    #produit img {
+        margin-bottom: 10px;
     }
     #produit, 
     #total,
@@ -510,9 +446,8 @@ footer a {
     #prix li,
     #couleur li,
     #total li {
-        text-align: center;
         line-height: 50px;
-        font-size: 14px;
+        font-size: 12px;
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -520,20 +455,22 @@ footer a {
         width: 70px;
     }
     #quantite li,
-    #produit li,
     #supprimer li,
+    #produit li,
     #prix li,
     #total li {
         width: 50px;
+        text-align: center;
+    }
+    #supprimer li {
+        text-align: left;
     }
    .prix_total {
         font-size: 24px;
         padding: 10px;
     }
     .formulaire input, .formulaire textarea {
-        min-height: 30px;
         width: 290px;
-        margin: auto;
     }
     .submit {
         width: 150px;
@@ -547,8 +484,6 @@ footer a {
         margin-right: 20px;
     }
     .descriptif {
-        font-size: 24px;
-        text-align: center;
         margin-right: 20%;
         margin-left: 20%;
         margin-bottom: 30px;
@@ -581,7 +516,7 @@ footer a {
     }
     #basket-container {
         justify-content: space-between;
-        border: none;
+        align-self: center;
         margin: 0 20px 30px 10px;
     }
     .tab {
@@ -600,29 +535,16 @@ footer a {
         margin: 0;
         padding: 0;
     }
-    #quantite li,
-    #produit li,
-    #supprimer li,
-    #total li,
-    #couleur li,
-    #prix li {
-        text-align: center;
-        font-size: 18px;
-    }
     #couleur li,
     #quantite li,
     #prix li,
     #supprimer li,
     #total li {
         line-height: 100px;
-        width: 100px;
     }
     #produit li {
         line-height: 50px;
         width: 120px;
-    }
-    footer {
-        font-size: 22px;
     }
     footer ul {
         flex-direction: column;
