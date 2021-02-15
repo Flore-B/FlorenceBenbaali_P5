@@ -308,6 +308,7 @@ select {
     #product img,  .bear img {
         width: 80%;
         height: auto;
+        align-self: center;
     }
     #product img {
         margin-right: 5px;

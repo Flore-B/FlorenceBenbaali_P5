@@ -9,7 +9,7 @@ function recupBasket() {
   } else {
     const emptyBasket = document.createElement("p"); //Pour afficher que le panier est vide
     fillBasket.appendChild(emptyBasket);
-    fillBasket.textContent = "Votre panier ne contient pas d'article !";
+    fillBasket.textContent = "Votre panier ne contient pas d'article !";
     displayForm.style.display = "none";
   }
 }
@@ -88,13 +88,15 @@ displayBasket();
 
 
 let form = document.getElementById("formulaire");
-//----------------Vérification de la saisie pour tous les champs du formulaire---------------------------
-form.addEventListener("keydown", () => {
 
+//----------------Vérification de la saisie pour tous les champs du formulaire---------------------------
+form.addEventListener("input", validForm);
+
+function validForm(e) {
 //---------------------------Regex-----------------------------------------------------------------------
-let rEText = /^[A-ZÀ-Ü]{1}[a-zà-ÿ]+['-]*[A-ZÀ-Üa-zà-ÿ]*$/;
-let rEAddress = /[0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s,-]{1,50}$/;
-let rEEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9-.]{2,4}$/;
+let regexText = /^[A-ZÀ-Ü]{1}[a-zà-ÿ]+['-]*[A-ZÀ-Üa-zà-ÿ]*$/;
+let regexAddress = /[0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s,-]{1,50}$/;
+let regexEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9-.]{2,4}$/;
 
 //---------------------------Récupération des inputs-----------------------------------------------------
 let prenom = document.getElementById("prenom").value;
@@ -110,48 +112,58 @@ let adresseError = document.getElementById("address_error");
 let villeError = document.getElementById("town_error");
 let courielError = document.getElementById("email_error");
 
-  if (prenom.match(rEText)) {
+  if (regexText.test(prenom)) {
     prenomError.textContent = "";
   } else {
     prenomError.textContent = "Veuillez saisir votre Prénom";
     prenomError.style.color = "red";
     return false;
   }
-  if (nom.match(rEText)) {
+  if (regexText.test(nom)) {
     nomError.textContent = "";
   } else {
     nomError.textContent = "Veuillez saisir votre Nom";
     nomError.style.color = "red";
     return false;
   }
-  if (adresse.match(rEAddress)) {
+  if (regexAddress.test(adresse)) {
     adresseError.textContent = "";
   } else {
     adresseError.textContent = "Veuillez saisir votre Adresse";
     adresseError.style.color = "red";
     return false;
   }
-  if (ville.match(rEText)) {
+  if (regexText.test(ville)) {
     villeError.textContent = "";
   } else {
     villeError.textContent = "Veuillez saisir le Nom de votre ville";
     villeError.style.color = "red";
     return false;
   }
-  if (couriel.match(rEEmail)) {
+  if (regexEmail.test(couriel)) {
     courielError.textContent = "";
   } else {
     courielError.textContent = "Veuillez saisir une adresse email valide";
     courielError.style.color = "red";
     return false;
+  } 
+  if(form.checkValidity() != true) { //Vérification du formulaire avant envoi
+    e.preventDefault();
+  } else {
+      validOrder();
   }
-});
+};
+
+function validOrder() {
 
 let button = document.querySelector(".submit");
-button.addEventListener("click", (e) => {
-
-  e.preventDefault;
-  
+button.addEventListener("click", () => {
+ 
+  let prenom = document.getElementById("prenom").value;
+  let nom = document.getElementById("nom").value;
+  let adresse = document.getElementById("adresse").value;
+  let ville = document.getElementById("ville").value;
+  let couriel = document.getElementById("email").value;
   let products = totalBasket.map((totalBasket) => totalBasket.id);
 
   let order = {
@@ -164,7 +176,6 @@ button.addEventListener("click", (e) => {
     },
     products: products,
   };
-      
    fetch("http://localhost:3000/api/teddies/order",
     {
       method: "POST",
@@ -180,5 +191,5 @@ button.addEventListener("click", (e) => {
         localStorage.setItem('orderId', JSON.stringify(response.orderId));
         window.location.href = "/front/confirmation.html";
       })
-    });
-
+  });
+}
