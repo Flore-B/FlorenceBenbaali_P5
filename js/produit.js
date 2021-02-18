@@ -82,9 +82,8 @@ function saveBasket(basket) {
     countHeader();
   });
 
-
 //----------------------Fonction pour l'ajout au panier--------------------------------
-function addToBasket(data) {
+function addToBasket() {
   basket = initBasket(); // Récupération du panier
   const colorChoice = document.getElementById("couleurs").value; //Récupération de la couleur
   
