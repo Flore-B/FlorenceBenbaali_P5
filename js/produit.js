@@ -102,7 +102,7 @@ function addToBasket(data) {
   // On regarde si le produit + couleur existe dans le panier
   const found = basket.find(
     productSelected =>
-    productSelected.id == data._id && productSelected.color == colorChoice;
+    productSelected.id == data._id && productSelected.color == colorChoice
   );
   if (found) {
     found.quantity++; // Si oui, on icrémente la quantité
