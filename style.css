@@ -225,6 +225,9 @@ select {
     display:flex;
     flex-direction: column;
 }
+#produit li {
+    line-height: 40px;
+}
 #produit li,
 #couleur li,
 #quantite li,
@@ -494,6 +497,9 @@ select {
         display: flex;
         flex-direction: column;
     }
+    #product img {
+        align-self: center;
+    }
     .name {
         padding-bottom: 10px;
         font-size: 25px;
@@ -520,6 +526,9 @@ select {
         align-self: center;
         margin: 0 20px 30px 10px;
     }
+    #basket-container p {
+        justify-content: center;
+    }
     .tab {
         width: 100px;
     }
@@ -544,7 +553,7 @@ select {
         line-height: 100px;
     }
     #produit li {
-        line-height: 50px;
+        line-height: 35px;
         width: 120px;
     }
     footer ul {
