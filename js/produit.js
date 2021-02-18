@@ -1,3 +1,6 @@
+//------Appel de la fonction qui affiche la quantité du panier dans le header-----
+countHeader()
+
 //-------------------Fonction qui appelle la requête fetch----------------------------
 descriptiveProduct();
 
@@ -51,7 +54,6 @@ descriptiveProduct();
     selectColorTeddy.appendChild(optionColorTeddy);
     optionColorTeddy.textContent = data.colors[i];
    }
- 
   //-------------------Création du bouton pour valider le choix--------------------
   const btnAdd = document.createElement("button");
   btnAdd.setAttribute("class", "btnAdd");
@@ -93,7 +95,7 @@ descriptiveProduct();
    };
     // On regarde si le produit + couleur existe dans le panier
     const found = basket.find(
-      (productSelected) =>
+      productSelected =>
         productSelected.id == data._id && productSelected.color == colorChoice
     );
     if (found) {
