@@ -75,7 +75,7 @@
         <p>
           Afin de valider votre commande, nous vous remercions de bien vouloir renseigner tous les champs du formulaire
         </p>
-        <form method="post" id="formulaire">
+        <form method="post" id="formulaire" onsubmit="return validForm()">
           <p>
             <label for="prenom">Prénom </label
             ><input type="text" name="first_name" id="prenom" required />
@@ -101,7 +101,7 @@
             ><input type="email" name="email" id="email" required/>
             <span id="email_error" class="error-email"></span>
           </p>
-          <p><input class="submit" type="submit" value="Envoyer"></button></p>
+          <p><input class="submit" type="submit" value="Envoyer"></p>
         </form>
       </div>
     </section>
