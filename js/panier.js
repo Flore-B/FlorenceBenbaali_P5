@@ -1,3 +1,6 @@
+//------Appel de la fonction qui affiche la quantité du panier dans le header-----
+countHeader();
+
 //------------------Récupération des données du local storage--------------------
 function recupBasket() {
   let totalBasket = localStorage.getItem("panier");
@@ -68,7 +71,7 @@ function totalPrice() {
   for (let elem of totalBasket) {
     totalPrice += elem.total;
   }
-  document.querySelector(".prix_total").textContent = `Le montant de votre panier est de ${(totalPrice / 100).toFixed(2)} € `;
+  document.querySelector(".prix_total").textContent = `Le montant de votre panier est de ${(totalPrice / 100).toFixed(2)} € `;
 }
 //-----------------------Fonction pour supprimer un article du panier--------------------------------
 function deletePrice(i) {
@@ -82,7 +85,6 @@ function deletePrice(i) {
   }
 }
 
-countHeader();
 totalPrice();
 displayBasket();
 
@@ -112,7 +114,7 @@ let adresseError = document.getElementById("address_error");
 let villeError = document.getElementById("town_error");
 let courielError = document.getElementById("email_error");
 
-  if (regexText.test(prenom)) {
+  if (regexText.test(prenom)) { // Vérifie la correspondance entre la saisie et l'expression régulière
     prenomError.textContent = "";
   } else {
     prenomError.textContent = "Veuillez saisir votre Prénom";
@@ -153,43 +155,3 @@ let courielError = document.getElementById("email_error");
       validOrder();
   }
 };
-
-function validOrder() {
-
-let button = document.querySelector(".submit");
-button.addEventListener("click", () => {
- 
-  let prenom = document.getElementById("prenom").value;
-  let nom = document.getElementById("nom").value;
-  let adresse = document.getElementById("adresse").value;
-  let ville = document.getElementById("ville").value;
-  let couriel = document.getElementById("email").value;
-  let products = totalBasket.map((totalBasket) => totalBasket.id);
-
-  let order = {
-    contact: {
-      firstName: prenom,
-      lastName: nom,
-      address: adresse,
-      city: ville,
-      email: couriel,  
-    },
-    products: products,
-  };
-   fetch("http://localhost:3000/api/teddies/order",
-    {
-      method: "POST",
-      body: JSON.stringify(order),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(response => response.json())
-      .then(response => {
-        localStorage.setItem('order', JSON.stringify(order));
-        localStorage.setItem('firstName', JSON.stringify(response.contact.firstName));
-        localStorage.setItem('orderId', JSON.stringify(response.orderId));
-        window.location.href = "/front/confirmation.html";
-      })
-  });
-}
