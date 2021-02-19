@@ -193,6 +193,7 @@ select {
     border: 2px #ffffff solid;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 /*-----------------Page panier-------------------------*/
 .basket-title {
@@ -375,6 +376,9 @@ select {
         margin: 0;
         padding-bottom: 10px;
     }       
+    .valid {
+        font-size: 20px;
+    }
     select {
         align-self: center;
         margin-bottom: 60px;
@@ -496,6 +500,7 @@ select {
         margin: 10px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 30px;
     }
     #product img {
         align-self: center;
