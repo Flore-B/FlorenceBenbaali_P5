@@ -26,7 +26,7 @@ function validOrder() {
   button.addEventListener("click", () => {
 
  //------------------Récupération des données du formulaire----------------------
-      let prenom = document.getElementById("prenom").value;
+    let prenom = document.getElementById("prenom").value;
     let nom = document.getElementById("nom").value;
     let adresse = document.getElementById("adresse").value;
     let ville = document.getElementById("ville").value;
@@ -53,16 +53,15 @@ function validOrder() {
           "Content-Type": "application/json",
         },
       })
-        .then(response => response.json())
-        .then(response => {
+      .then(response => response.json())
+      .then(response => {
           localStorage.setItem('order', JSON.stringify(order)); //enregistrement de l'objet dans le local storage
           localStorage.setItem('firstName', JSON.stringify(response.contact.firstName)); //stockage de l'objet dans le local storage
           localStorage.setItem('orderId', JSON.stringify(response.orderId)); //stockage du numéro de commande
-          window.location.href = "/front/confirmation.html"; //ouverture de la page confirmation
+          window.location.href = "confirmation.html"; //ouverture de la page confirmation
         })
-    });
-  }
-  
+  });
+}
 //-----------------Fonction pour afficher la quantité du panier dans le header----------------------
 function countHeader() {
   let totalBasket = JSON.parse(localStorage.getItem("panier"));
