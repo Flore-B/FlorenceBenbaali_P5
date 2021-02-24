@@ -3,7 +3,9 @@ const confirmOrder = JSON.parse(localStorage.getItem("order"));
 const firstName = JSON.parse(localStorage.getItem("firstName"));//Conversion au format javaScript
 const orderId = JSON.parse(localStorage.getItem("orderId"));
 const panier = JSON.parse(localStorage.getItem("panier"));
-
+console.log(firstName)
+console.log(orderId)
+console.log(panier)
 const confirm = document.getElementById("valid");
 //------------------------Création des éléments du DOM----------------------------
 const cont = document.createElement("div");
