@@ -5,7 +5,7 @@ countHeader();
 function recupBasket() {
   let totalBasket = localStorage.getItem("panier");
   const fillBasket = document.getElementById("basket-container");
-  let displayForm = document.getElementById("form");
+  const displayForm = document.getElementById("form");
 
   if (totalBasket) {//Si le panier existe
     return JSON.parse(totalBasket); //Renvoie le panier en objet javaScript
@@ -45,7 +45,6 @@ function displayBasket() {
     const deleteProduct = document.createElement("li");
     deleteProduct.setAttribute("class", "far fa-trash-alt");
     supprimer.appendChild(deleteProduct);
-    
     let sup = document.getElementsByClassName("far fa-trash-alt");
     for (let elem of sup) {
       elem.addEventListener("click", function () {
@@ -89,30 +88,30 @@ totalPrice();
 displayBasket();
 
 
-let form = document.getElementById("formulaire");
+const form = document.getElementById("formulaire");
 
 //----------------Vérification de la saisie pour tous les champs du formulaire---------------------------
 form.addEventListener("input", validForm);
 
 function validForm(e) {
 //---------------------------Regex-----------------------------------------------------------------------
-let regexText = /^[A-ZÀ-Ü]{1}[a-zà-ÿ]+['-]*[A-ZÀ-Üa-zà-ÿ]*$/;
-let regexAddress = /[0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s,-]{1,50}$/;
-let regexEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9-.]{2,4}$/;
+const regexText = /^[A-ZÀ-Ü]{1}[a-zà-ÿ]+['-]*[A-ZÀ-Üa-zà-ÿ]*$/;
+const regexAddress = /[0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s,-]{1,50}$/;
+const regexEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9-.]{2,4}$/;
 
 //---------------------------Récupération des inputs-----------------------------------------------------
-let prenom = document.getElementById("prenom").value;
-let nom = document.getElementById("nom").value;
-let adresse = document.getElementById("adresse").value;
-let ville = document.getElementById("ville").value;
-let couriel = document.getElementById("email").value;
-
+const prenom = document.getElementById("prenom").value;
+const nom = document.getElementById("nom").value;
+const adresse = document.getElementById("adresse").value;
+const ville = document.getElementById("ville").value;
+const couriel = document.getElementById("email").value;
+ 
 //----------------Variables pour commenter en cas d'erreur----------------------------------------------
-let prenomError = document.getElementById("first_name_error");
-let nomError = document.getElementById("last_name_error");
-let adresseError = document.getElementById("address_error");
-let villeError = document.getElementById("town_error");
-let courielError = document.getElementById("email_error");
+const prenomError = document.getElementById("first_name_error");
+const nomError = document.getElementById("last_name_error");
+const adresseError = document.getElementById("address_error");
+const villeError = document.getElementById("town_error");
+const courielError = document.getElementById("email_error");
 
   if (regexText.test(prenom)) { // Vérifie la correspondance entre la saisie et l'expression régulière
     prenomError.textContent = "";
