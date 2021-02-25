@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Récapitulatif de la commande</title>
   </head>
+  
   <body>
     <header class="menu">
       <p>
@@ -30,50 +31,44 @@
         </ul>
       </nav>
     </header>
-    <section id='panier'>
+    <section id="panier">
       <div class="basket-title">
-        <h1>Contenu de votre panier</h1></div>
-        <div id="basket-container">
-          <div class="tab">
-            <h2>Produit</h2>
-          <ul id="produit">
-          </ul>
-         </div>
-         <div class="tab">
-           <h2>Couleur</h2>
-          <ul id="couleur">
-          </ul>
-          </div>
-          <div class="tab">
+        <h1>Contenu de votre panier</h1>
+      </div>
+      <div id="basket-container">
+        <div class="tab">
+          <h2>Produit</h2>
+          <ul id="produit"></ul>
+        </div>
+        <div class="tab">
+          <h2>Couleur</h2>
+          <ul id="couleur"></ul>
+        </div>
+        <div class="tab">
           <h2>Prix</h2>
-          <ul id="prix">
-          </ul>
-          </div>
-          <div class="tab">
-            <h2 class="shrink"><span>Quantité</span></h2>
-          <ul id="quantite">
-          </ul>
+          <ul id="prix"></ul>
+        </div>
+        <div class="tab">
+          <h2 class="shrink"><span>Quantité</span></h2>
+          <ul id="quantite"></ul>
         </div>
         <div class="tab">
           <h2 class="delete"><span>Supprimer</span></h2>
-          <ul id="supprimer">
-          </ul>
+          <ul id="supprimer"></ul>
         </div>
         <div class="tab">
           <h2>Total</h2>
-          <ul id="total">
-          </ul>
+          <ul id="total"></ul>
         </div>
-        </div>
-        <div class="prix_total">
-        
       </div>
+      <div class="prix_total"></div>
     </section>
-<section id ="form">
+    <section id="form">
       <div class="formulaire">
         <h2>Formulaire de contact</h2>
         <p>
-          Afin de valider votre commande, nous vous remercions de bien vouloir renseigner tous les champs du formulaire
+          Afin de valider votre commande, nous vous remercions de bien vouloir
+          renseigner tous les champs du formulaire
         </p>
         <form method="post" id="formulaire" onsubmit="return validForm()">
           <p>
@@ -83,25 +78,31 @@
           </p>
           <p>
             <label for="nom">Nom </label
-            ><input type="text" name="last_name" id="nom" required/>
+            ><input type="text" name="last_name" id="nom" required />
             <span id="last_name_error" class="error"></span>
           </p>
           <p>
             <label for="adresse">Adresse </label
-            ><textarea name="address" id="adresse" rows="3" cols="40" required></textarea>
-              <span id="address_error" class="error"></span>
-            </p>
+            ><textarea
+              name="address"
+              id="adresse"
+              rows="3"
+              cols="40"
+              required
+            ></textarea>
+            <span id="address_error" class="error"></span>
+          </p>
           <p>
             <label for="ville">Ville </label
-            ><input type="text" name="town" id="ville" required/>
+            ><input type="text" name="town" id="ville" required />
             <span id="town_error" class="error"></span>
           </p>
           <p>
             <label for="email">Courriel </label
-            ><input type="email" name="email" id="email" required/>
+            ><input type="email" name="email" id="email" required />
             <span id="email_error" class="error-email"></span>
           </p>
-          <p><input class="submit" type="submit" value="Envoyer"></p>
+          <p><input class="submit" type="submit" value="Envoyer" /></p>
         </form>
       </div>
     </section>
@@ -115,10 +116,18 @@
         <li><a href="#">Mentions légales</a></li>
       </ul>
       <ul class="social_media">
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+        <li>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-twitter-square"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </li>
       </ul>
     </footer>
 

@@ -4,23 +4,24 @@ countHeader();
 //------------------Récupération des données du local storage--------------------
 function recupBasket() {
   let totalBasket = localStorage.getItem("panier");
+
   const fillBasket = document.getElementById("basket-container");
   const displayForm = document.getElementById("form");
 
-  if (totalBasket) {//Si le panier existe
-    return JSON.parse(totalBasket); //Renvoie le panier en objet javaScript
+  if (totalBasket) { // Si le panier existe
+    return JSON.parse(totalBasket); // Renvoie le panier en objet javaScript
   } else {
-    const emptyBasket = document.createElement("p"); //Pour afficher que le panier est vide
+    const emptyBasket = document.createElement("p"); // Paragraphe pour afficher que le panier est vide
     fillBasket.appendChild(emptyBasket);
     fillBasket.textContent = "Votre panier ne contient pas d'article !";
-    displayForm.style.display = "none";
+    displayForm.style.display = "none"; // Le formulaire ne sera pas affiché
   }
 }
-//--------------------Affichage des informations du panier-----------------------
+//----------------------Affichage des informations du panier-------------------------
 function displayBasket() {
   totalBasket = recupBasket();
 
-  //--------------------------Création des éléments du DOM--------------------------
+//---------------------------Création des éléments du DOM-----------------------------
   for (let i = 0; i < totalBasket.length; i++) {
     const produit = document.getElementById("produit");
     const imageProduct = document.createElement("img");
@@ -47,7 +48,7 @@ function displayBasket() {
     supprimer.appendChild(deleteProduct);
     let sup = document.getElementsByClassName("far fa-trash-alt");
     for (let elem of sup) {
-      elem.addEventListener("click", function () {
+      elem.addEventListener("click", function() {
         deletePrice(i);
       });
     }
@@ -62,7 +63,7 @@ function displayBasket() {
     totalProduct.textContent = (totalBasket[i].total / 100).toFixed(2) + " €";
   }
 }
-//-----------------------Calcul et affichage du montant total du panier-----------------------------------
+//-------------Calcul et affichage du montant total du panier--------------------------
 function totalPrice() {
   totalBasket = recupBasket();
   let totalPrice = 0;
@@ -72,7 +73,7 @@ function totalPrice() {
   }
   document.querySelector(".prix_total").textContent = `Le montant de votre panier est de ${(totalPrice / 100).toFixed(2)} € `;
 }
-//-----------------------Fonction pour supprimer un article du panier--------------------------------
+//-----------------Fonction pour supprimer un article du panier-------------------------
 function deletePrice(i) {
   if (totalBasket) {
     totalBasket.splice(i, 1); //Supprime du tableau l'élément sélectionné
@@ -90,23 +91,23 @@ displayBasket();
 
 const form = document.getElementById("formulaire");
 
-//----------------Vérification de la saisie pour tous les champs du formulaire---------------------------
+//-----------Vérification de la saisie pour tous les champs du formulaire---------------
 form.addEventListener("input", validForm);
 
 function validForm(e) {
-//---------------------------Regex-----------------------------------------------------------------------
+//----------------------Regex-----------------------------------------------------------
 const regexText = /^[A-ZÀ-Ü]{1}[a-zà-ÿ]+['-]*[A-ZÀ-Üa-zà-ÿ]*$/;
 const regexAddress = /[0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s,-]{1,50}$/;
 const regexEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9-.]{2,4}$/;
 
-//---------------------------Récupération des inputs-----------------------------------------------------
+//------------------Récupération des inputs----------------------------------------------
 const prenom = document.getElementById("prenom").value;
 const nom = document.getElementById("nom").value;
 const adresse = document.getElementById("adresse").value;
 const ville = document.getElementById("ville").value;
 const couriel = document.getElementById("email").value;
  
-//----------------Variables pour commenter en cas d'erreur----------------------------------------------
+//----------------Variables pour commenter en cas d'erreur-------------------------------
 const prenomError = document.getElementById("first_name_error");
 const nomError = document.getElementById("last_name_error");
 const adresseError = document.getElementById("address_error");
@@ -148,7 +149,7 @@ const courielError = document.getElementById("email_error");
     courielError.style.color = "red";
     return false;
   } 
-  if(form.checkValidity() != true) { //Vérification du formulaire avant envoi
+  if(form.checkValidity() != true) { // Vérification du formulaire avant envoi
     e.preventDefault();
   } else {
       validOrder();

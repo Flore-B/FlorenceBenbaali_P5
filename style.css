@@ -406,10 +406,6 @@ select {
         align-self: center;
         margin-bottom: 60px;
     }
-    #panier, #form {
-        margin-right: 10px;
-        margin-left: 10px;
-    }
     .basket-title {
         font-size: 20px; 
         padding-top: 20px;
@@ -431,7 +427,7 @@ select {
         display: none;
     }
     #produit img {
-        width: 60px;
+        width: 50px;
         height: 40px;
     }
    .shrink span {

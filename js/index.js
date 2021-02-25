@@ -1,15 +1,12 @@
-//---------------------------Appel de l'API------------------------------
-
+//------------------------------Appel de l'API--------------------------------
 fillProducts();
 
 //-------------Ajoute les éléments des produits dans le code HTML-------------
-
 function allProducts(data) {
   for (let i = 0; i < data.length; i++) {
-
-//------------------------Création des balises---------------------------------
     const container = document.getElementById('teddies'); //Création du cadre pour accueillir les produits
 
+//------------------------Création des balises---------------------------------
     const cardBear = document.createElement('div');
     const imgBear = document.createElement('img');
     const priceBear = document.createElement('p');
@@ -36,10 +33,8 @@ function allProducts(data) {
 //---------------------------Ajout du contenu texte------------------------------
     priceBear.textContent = `${(data[i].price / 100).toFixed(2)} €`;
     btnViewBear.innerHTML = `Voir ${data[i].name}`;
-    linkBear.href = `produit.html?id=${data[i]._id}`;
   }
 }
 
 //------Appel de la fonction qui affiche la quantité du panier dans le header-----
-
 countHeader()

@@ -1,17 +1,18 @@
+//--------------------------Création varaible URL------------------------------
 const urlApi = "http://localhost:3000/api/teddies";
 
 //---------Fonction pour récupérer tous les produits dans l'URL----------------
 async function fillProducts() {
   let response = await fetch(urlApi);
   if (!response.ok) {
-    alert("L'appel au serveur ne fonctionne pas"); //si la promesse est rejetée
+    alert("L'appel au serveur ne fonctionne pas"); // si la promesse est rejetée
   }
-  let data = await response.json(); //retourne au format Json
-  return allProducts(data); //appelle fonction pour la page accueil
+  let data = await response.json(); // retourne au format Json
+  return allProducts(data); // fonction pour afficher les données sur la page accueil
 }
 
-//------------Récupérer l'id du produit dans l'URL---------------------------
-const urlParams = new URLSearchParams(window.location.search); //Pour accéder à la chaîne des paramètres de l'URL
+//------------------Récupérer l'id du produit dans l'URL------------------------
+const urlParams = new URLSearchParams(window.location.search); // Pour accéder à la chaîne des paramètres de l'URL
 const card = urlParams.get("id");
 
 //-----------------Fonction pour afficher un produit par son id-----------------
@@ -21,7 +22,7 @@ async function descriptiveProduct() {
     alert("L'appel au serveur ne fonctionne pas");
   }
   let data = await response.json();
-  return oneProduct(data); //appelle fonction pour création page produit
+  return oneProduct(data); // fonction pour afficher les données sur la page produit
 }
 
 //-------------Fonction pour envoyer les données récoltées à l'API---------------
@@ -38,7 +39,7 @@ function validOrder() {
         city: document.getElementById("ville").value,
         email: document.getElementById("email").value,
       },
-      products: totalBasket.map((totalBasket) => totalBasket.id), //création d'un tableau avec seulement les id des produits
+      products: totalBasket.map(totalBasket => totalBasket.id), //création d'un tableau avec seulement les id des produits
     };
 
 //--------------------Envoi des données au serveur---------------------------
@@ -49,12 +50,12 @@ function validOrder() {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => response.json())
-      .then((response) => {
-        localStorage.setItem("order", JSON.stringify(order)); //stockage de l'objet dans le local storage
-        localStorage.setItem("firstName", JSON.stringify(response.contact.firstName)); //stockage du prénom dans le local storage
-        localStorage.setItem("orderId", JSON.stringify(response.orderId)); //stockage du numéro de commande
-        window.location.href = "confirmation.html"; //ouverture de la page confirmation
+      .then(response => response.json())
+      .then(response => {
+        localStorage.setItem("order", JSON.stringify(order)); // stockage de l'objet dans le local storage
+        localStorage.setItem("firstName", JSON.stringify(response.contact.firstName)); // stockage du prénom dans le local storage
+        localStorage.setItem("orderId", JSON.stringify(response.orderId)); // stockage du numéro de commande dans le local storage
+        window.location.href = "confirmation.html"; // ouverture de la page confirmation
       });
   });
 }

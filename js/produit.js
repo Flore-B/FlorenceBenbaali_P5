@@ -1,7 +1,7 @@
 //------Appel de la fonction qui affiche la quantité du panier dans le header-----
 countHeader()
 
-//-------------------Fonction qui appelle la requête fetch----------------------------
+//--------------------------------Appel de l'API-----------------------------------
 descriptiveProduct();
 
 //----------------------Initialisation du panier pour les objets-------------------
@@ -15,7 +15,7 @@ function initBasket() {
   }
 }
 
-//-----------------Enregistre le panier dans le localstorage-------------------------------
+//-----------------Enregistre le panier dans le localstorage--------------------------
 function saveBasket(basket) {
   localStorage.setItem("panier", JSON.stringify(basket));
 }
@@ -63,7 +63,6 @@ function saveBasket(basket) {
   content.appendChild(selectColorTeddy);
 
   //------------Boucle for pour le menu déroulant du choix des couleurs-------------------
-
    for (i = 0; i < data.colors.length; i++) {
     const optionColorTeddy = document.createElement("option");
     optionColorTeddy.setAttribute("value", data.colors[i]);
@@ -85,7 +84,7 @@ function saveBasket(basket) {
 //----------------------Fonction pour l'ajout au panier--------------------------------
 function addToBasket() {
   basket = initBasket(); // Récupération du panier
-  const colorChoice = document.getElementById("couleurs").value; //Récupération de la couleur
+  const colorChoice = document.getElementById("couleurs").value; // Récupération de la couleur
   
   const quantity = 1;
   const total = 0;
