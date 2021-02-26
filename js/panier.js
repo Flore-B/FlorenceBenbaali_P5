@@ -119,6 +119,7 @@ const courielError = document.getElementById("email_error");
   } else {
     prenomError.textContent = "Veuillez saisir votre Prénom";
     prenomError.style.color = "red";
+    invalidOrder();
     return false;
   }
   if (regexText.test(nom)) {
@@ -126,6 +127,7 @@ const courielError = document.getElementById("email_error");
   } else {
     nomError.textContent = "Veuillez saisir votre Nom";
     nomError.style.color = "red";
+    invalidOrder();
     return false;
   }
   if (regexAddress.test(adresse)) {
@@ -133,6 +135,7 @@ const courielError = document.getElementById("email_error");
   } else {
     adresseError.textContent = "Veuillez saisir votre Adresse";
     adresseError.style.color = "red";
+    invalidOrder();
     return false;
   }
   if (regexText.test(ville)) {
@@ -140,6 +143,7 @@ const courielError = document.getElementById("email_error");
   } else {
     villeError.textContent = "Veuillez saisir le Nom de votre ville";
     villeError.style.color = "red";
+    invalidOrder();
     return false;
   }
   if (regexEmail.test(couriel)) {
@@ -147,11 +151,12 @@ const courielError = document.getElementById("email_error");
   } else {
     courielError.textContent = "Veuillez saisir une adresse email valide";
     courielError.style.color = "red";
+    invalidOrder();
     return false;
   } 
   if(form.checkValidity() != true) { // Vérification du formulaire avant envoi
     e.preventDefault();
   } else {
-      validOrder();
+    validOrder();
   }
 };

@@ -25,11 +25,20 @@ async function descriptiveProduct() {
   return oneProduct(data); // fonction pour afficher les données sur la page produit
 }
 
-//-------------Fonction pour envoyer les données récoltées à l'API---------------
+//---Fonction pour déclencher un évenement qui envoie les données par l'appel d'une fonction-------
 function validOrder() {
   const button = document.querySelector(".submit");
-  button.addEventListener("click", () => {
-    
+  button.addEventListener("click", submitOrder);
+}
+
+//-----------------Fonction qui supprime l'écouteur d'évènement précédent-----------------
+function invalidOrder() {
+  const button = document.querySelector(".submit");
+  button.removeEventListener("click", submitOrder);
+}
+
+//---------------Fonction pour envoyer les données récoltées à l'API------------------------
+function submitOrder(){ 
 //création de l'objet contenant les données du contact et les id des produits sélectionnés  
     const order = {
       contact: { //------------------Récupération des données du formulaire----------------------
@@ -57,8 +66,8 @@ function validOrder() {
         localStorage.setItem("orderId", JSON.stringify(response.orderId)); // stockage du numéro de commande dans le local storage
         window.location.href = "confirmation.html"; // ouverture de la page confirmation
       });
-  });
-}
+  }
+
 
 //-----------------Fonction pour afficher la quantité du panier dans le header----------------------
 function countHeader() {
